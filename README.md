@@ -229,18 +229,4 @@ Bash
 
 ---
 
-🎯 Why This Project is Good for a DevOps Portfolio?
-
-Shows real-world automation
-
-Includes CI/CD pipeline
-
-Includes server provisioning
-
-Includes monitoring stack
-
-Includes templates & services
-
-Shows folder organization best-practices
-
-Looks highly professional to recruiters
+🎯 
