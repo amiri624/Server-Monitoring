@@ -1,0 +1,22 @@
+
+---
+- name: Setup Prometheus Server
+  hosts: prometheus
+  become: yes
+  roles:
+    - prometheus
+
+- name: Setup Node Exporters
+  hosts: node_exporters
+  become: yes
+  roles:
+    - node_exporter
+
+- name: Setup Grafana Server
+  hosts: grafana
+  become: yes
+  roles:
+    - grafana
+
+
+---

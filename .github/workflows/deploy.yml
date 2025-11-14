@@ -1,0 +1,37 @@
+
+name: Deploy Monitoring Stack
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Ansible
+        run: |
+          sudo apt update
+          sudo apt install -y ansible
+
+      - name: Add SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Test SSH connection
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo Connected."
+
+      - name: Run Ansible Playbook
+        run: |
+          ansible-playbook playbooks/site.yml \
+            -i inventory/hosts.ini \
+            --private-key ~/.ssh/id_rsa \
+            -u ${{ secrets.SERVER_USER }}
