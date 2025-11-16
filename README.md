@@ -21,7 +21,7 @@ This project is designed to demonstrate real, practical DevOps skills including:
 Perfect for production usage and for showcasing in your DevOps portfolio.
 
 
----
+```bash
 
 📊 Architecture Overview
 
@@ -54,8 +54,8 @@ Perfect for production usage and for showcasing in your DevOps portfolio.
     │  • NodeExporter (9100)             │
     └────────────────────────────────────┘
 
-
----
+```
+```bash
 
 📁 Project Structure
 
@@ -83,8 +83,7 @@ devops-monitoring/
 └── README.md
 
 
----
-
+```
 🚀 Features
 
 🔧 Ansible Automation
