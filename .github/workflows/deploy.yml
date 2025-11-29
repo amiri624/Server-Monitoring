@@ -1,4 +1,5 @@
 
+---
 name: Deploy Monitoring Stack
 
 on:
@@ -35,3 +36,11 @@ jobs:
             -i inventory/hosts.ini \
             --private-key ~/.ssh/id_rsa \
             -u ${{ secrets.SERVER_USER }}
+
+
+
+---
+
+
+
+            
